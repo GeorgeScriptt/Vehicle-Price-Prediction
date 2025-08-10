@@ -12,39 +12,39 @@ The dataset used in this project is from [Kaggle](https://www.kaggle.com/dataset
 
 Below is the description of each column in the dataset
 
-* name: The full name of the vehicle, including make, model, and trim.
-* description: A brief description of the vehicle, often including key features and selling points.
-* make: The manufacturer of the vehicle (e.g., Ford, Toyota, BMW).
-* model: The model name of the vehicle.
-* year: The year the vehicle was manufactured.
-* price: The price of the vehicle in USD.
-* engine: Details about the engine, including type and specifications.
-* cylinders: The number of cylinders in the vehicle's engine.
-* fuel: The type of fuel used by the vehicle (e.g., Gasoline, Diesel, Electric).
-* mileage: The mileage of the vehicle, typically in miles.
-* transmission: The type of transmission (e.g., Automatic, Manual).
-* trim: The trim level of the vehicle, indicating different feature sets or packages.
-* body: The body style of the vehicle (e.g., SUV, Sedan, Pickup Truck)
-* doors: The number of doors on the vehicle.
-* exterior_color: The exterior color of the vehicle.
-* interior_color: The interior color of the vehicle.
-* drivetrain: The drivetrain of the vehicle (e.g., All-wheel Drive, Front-wheel Drive
+* Name: The full name of the vehicle, including make, model, and trim.
+* Description: A brief description of the vehicle, often including key features and selling points.
+* Make: The manufacturer of the vehicle (e.g., Ford, Toyota, BMW).
+* Model: The model name of the vehicle.
+* Year: The year the vehicle was manufactured.
+* Price: The price of the vehicle in USD.
+* Engine: Details about the engine, including type and specifications.
+* Cylinders: The number of cylinders in the vehicle's engine.
+* Fuel: The type of fuel used by the vehicle (e.g., Gasoline, Diesel, Electric).
+* Mileage: The mileage of the vehicle, typically in miles.
+* Transmission: The type of transmission (e.g., Automatic, Manual).
+* Trim: The trim level of the vehicle, indicating different feature sets or packages.
+* Body: The body style of the vehicle (e.g., SUV, Sedan, Pickup Truck)
+* Doors: The number of doors on the vehicle.
+* Exterior_color: The exterior color of the vehicle.
+* Interior_color: The interior color of the vehicle.
+* Drivetrain: The drivetrain of the vehicle (e.g., All-wheel Drive, Front-wheel Drive
 
 # Descriptive Statistics of the Dataset
 ## Numerical Features
-* year: Most vehicles are from 2024; small spread between 2023–2025.
-* price: Ranges from $0 to $195,895 (mean ≈ $50,203); outliers and invalid zero values present.
-* cylinders: Typically 4 or 6; some records contain 0 cylinders (likely data errors).
-* mileage: Skewed distribution; many low-mileage entries consistent with new or nearly new cars.
-* doors: Most vehicles have 4 doors, with very few 2- or 5-door models.
+* Year: Most vehicles are from 2024; small spread between 2023–2025.
+* Price: Ranges from $0 to $195,895 (mean ≈ $50,203); outliers and invalid zero values present.
+* Cylinders: Typically 4 or 6; some records contain 0 cylinders (likely data errors).
+* Mileage: Skewed distribution; many low-mileage entries consistent with new or nearly new cars.
+* Doors: Most vehicles have 4 doors, with very few 2- or 5-door models.
 
 ## Categorical Features
-* make & model: 28 makes and 153 models represented; "Jeep" and "Hornet" are most common.
-* body: Dominated by SUVs (70% of listings).
-* fuel: Mostly gasoline-powered vehicles (67%).
-* transmission: Predominantly automatic, especially 8-speed automatic.
-* drivetrain: All-wheel drive is the most common configuration.
-* color: High variety in both exterior (263 unique) and interior (91 unique) colors; "Bright White Clearcoat" and "Black" are most frequent.
+* Make & Model: 28 makes and 153 models represented; "Jeep" and "Hornet" are most common.
+* Body: Dominated by SUVs (70% of listings).
+* Fuel: Mostly gasoline-powered vehicles (67%).
+* Transmission: Predominantly automatic, especially 8-speed automatic.
+* Drivetrain: All-wheel drive is the most common configuration.
+* Color: High variety in both exterior (263 unique) and interior (91 unique) colors; "Bright White Clearcoat" and "Black" are most frequent.
 
 # Data Cleaning
 A thorough data cleaning process was performed to ensure data quality and consistency before analysis. The key steps are outlined below:
@@ -59,3 +59,12 @@ Missing values in numeric columns were imputed using the mean of each of the col
 
 # Data Exploration Insights
 * Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.![Price distribution](https://raw.githubusercontent.com/GeorgeScriptt/Vehicle-Price-Prediction/main/images/price_distribution.png)
+* Mileage and Cylinders: Mileage also showed outliers and was heavily skewed towards lower values, which is expected for newer vehicles. The number of cylinders had a less skewed distribution but also showed some outliers.
+
+## Relationship with Price
+* Price and Fuel: Electric and Diesel vehicles tend to have higher price ranges, with Electric showing the most variability and outliers. Gasoline vehicles have a wide price spread with many outliers. Hybrid and PHEV vehicles fall in the mid-price range, while E85 Flex Fuel vehicles show consistent pricing. Diesel (B20 capable) has a single price point, indicating limited data.
+![Price vs Fuel](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price%20vs%20fuel.png?raw=true)
+* Price and Make: RAM and Jeep have the highest median prices and widest ranges, indicating a variety of high-end models. Nissan, Volkswagen, and Kia generally offer more affordable options with lower medians. Mazda shows consistent mid-to-high pricing with little variation. Ford and Chevrolet display a wide spread, suggesting diverse pricing across their vehicle lineups.
+![Price vs Make](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price_make.png?raw=true)<img width="1638" height="596" alt="download" src="https://github.com/user-attachments/assets/6224b335-c91d-4098-a12d-647780b23adf" />
+
+* 
