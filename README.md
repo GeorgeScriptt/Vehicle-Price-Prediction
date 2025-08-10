@@ -59,4 +59,4 @@ Missing values in numeric columns were imputed using the mean of each of the col
 
 # Data Exploration Insights
 * Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.
-
+![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price_distribution.png)
