@@ -85,3 +85,36 @@ This helps prioritize which features are most valuable when building predictive 
 ![Correlation Heatmap](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/correlation_heatmap.png?raw=True)
 
 # Feature Engineering
+Based on the data exploration, feature engineering was performed to enhance the model's predictive capability:
+* Age: Vehicle age was derived from subtracting the year from the current year from python's datetime module.
+
+The engineered feature was added to the dataset alongside the original features (excluding 'name', 'description', 'engine' , and 'year' column which were dropped due to irrelevance or redundancy after extraction).
+
+# Model Exploration and Comparison
+Several regression models were explored to identify the most suitable one for this task:
+1. Linear Rgression
+2. Ridge Regression
+3. Stochastic Gradient Descent Regression
+
+The initial performance of these models on the test set (before hyperparameter tuning) was as follows:
+1. Linear Regression: MSE = 82135250.0, R2= 0.83
+2. Ridge: MSE = 82512800.0, R2 = 0.83
+3. SGDRgressor: MSE = 81719460.0, R2 = 0.83
+
+SGDRegressor Model with parameter `max_iter=6000` (number of iterations) slightly outperforms the other models, but differences are minimal.
+
+# Hyperparameter Tuning abd Cross-Validation
+Hyperparameter tuning was performed for Ridge and SGDRgressor model, using 5-fold cross-validation with GridSearchCV to find the optimal model configurations and get a more robust performance estimate.
+* Ridge Tuning: The best hyperparameter found for Ridge was `alpha = 1.0`.
+* Random Forest Tuning: The best hyperparameters found for Random Forest were `'alpha' = 0.0001, 'eta0' = 0.1, 'learning_rate' = 'adaptive', 'loss' = 'squared_error', 'max_iter' = 8000, 'penalty' = 'l2'`.
+
+The performance of the tuned models on the test set was as follows:
+* Tuned Ridge: Test MSE = 78452834.45, R2 = 0.84
+* Tuned SGDRegressor: Test MSE = 82147742.43, R2 = 0.83
+
+The tuned Ridge model had a `1%` increase in R2 score.
+
+# Best Model Selection
+Based on the evaluation metrics after hyperparameter tuning, the **Tuned Ridge Regression** model was selected as the best-performing model. It achieved the lowest Mean Squared Error (78452834.45) and the highest R-squared score (0.84) on the test set, indicating the best balance between minimizing prediction errors and explaining the variance in vehicle prices.
+
+# Error Analysis
