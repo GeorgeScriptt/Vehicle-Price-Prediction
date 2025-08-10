@@ -45,3 +45,14 @@ Below is the description of each column in the dataset
 * transmission: Predominantly automatic, especially 8-speed automatic.
 * drivetrain: All-wheel drive is the most common configuration.
 * color: High variety in both exterior (263 unique) and interior (91 unique) colors; "Bright White Clearcoat" and "Black" are most frequent.
+
+# Data Cleaning
+A thorough data cleaning process was performed to ensure data quality and consistency before analysis. The key steps are outlined below:
+## Duplicate Removal
+* 24 duplicate rows were identified and removed based on identical values across all columns.
+* This reduced the dataset size from 1,002 to 978 unique entries.
+## Handling Missing Values
+* Cylinders column had approximately 10% missing values, the highest among all features.
+* All other columns with missing data had 5% and less missing values.
+Missing values in numeric columns were imputed using the mean of each of the columns. This approach maintains the overall distribution while preventing data loss. Missing values in categorical columns were imputed with the mode(most frequent) of each of the column which helps preserve the dominant class in each category.
+
