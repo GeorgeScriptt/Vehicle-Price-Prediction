@@ -1,6 +1,12 @@
 # Project Overview
 This project aims to analyze a dataset of vehicle prices, build a regression model to predict price based on vehicle features, and present the findings. The process involves in-depth data exploration, feature engineering, training and evaluating multiple models, hyperparameter tuning, error analysis, and model interpretability.
 
+# Libraries Used
+* Pandas - Data Manipulation.
+* Matplotlib - Data Visualization.
+* Seaborn - Data Visualization.
+* Scikit-Learn - Data Preprocessing, Machine Learning Models, Model Evaluation and Tuning.
+
 # Dataset
 The dataset used in this project is from [Kaggle](https://www.kaggle.com/datasets/khwaishsaxena/vehicle-price-prediction-dataset/data). The dataset consists of 17 columns and 1002 rows.
 
@@ -23,3 +29,19 @@ Below is the description of each column in the dataset
 * exterior_color: The exterior color of the vehicle.
 * interior_color: The interior color of the vehicle.
 * drivetrain: The drivetrain of the vehicle (e.g., All-wheel Drive, Front-wheel Drive
+
+# Descriptive Statistics of the Dataset
+## Numerical Features
+* year: Most vehicles are from 2024; small spread between 2023–2025.
+* price: Ranges from $0 to $195,895 (mean ≈ $50,203); outliers and invalid zero values present.
+* cylinders: Typically 4 or 6; some records contain 0 cylinders (likely data errors).
+* mileage: Skewed distribution; many low-mileage entries consistent with new or nearly new cars.
+* doors: Most vehicles have 4 doors, with very few 2- or 5-door models.
+
+## Categorical Features
+* make & model: 28 makes and 153 models represented; "Jeep" and "Hornet" are most common.
+* body: Dominated by SUVs (70% of listings).
+* fuel: Mostly gasoline-powered vehicles (67%).
+* transmission: Predominantly automatic, especially 8-speed automatic.
+* drivetrain: All-wheel drive is the most common configuration.
+* color: High variety in both exterior (263 unique) and interior (91 unique) colors; "Bright White Clearcoat" and "Black" are most frequent.
