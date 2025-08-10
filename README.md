@@ -59,21 +59,26 @@ Missing values in numeric columns were imputed using the mean of each of the col
 
 # Data Exploration Insights
 * Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.
+  
 ![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/62fcc16a49a146bbb5973e6a696d7fdc1e45a1cc/images/price_distribution.png?raw=true)
 
 * Mileage and Cylinders: Mileage also showed outliers and was heavily skewed towards lower values, which is expected for newer vehicles. The number of cylinders had a less skewed distribution but also showed some outliers.
 
 ## Relationship with Price
 * Price and Fuel: Electric and Diesel vehicles tend to have higher price ranges, with Electric showing the most variability and outliers. Gasoline vehicles have a wide price spread with many outliers. Hybrid and PHEV vehicles fall in the mid-price range, while E85 Flex Fuel vehicles show consistent pricing. Diesel (B20 capable) has a single price point, indicating limited data.
+  
 ![Price vs Fuel](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price%20vs%20fuel.png?raw=true)
 
 * Price and Make: RAM and Jeep have the highest median prices and widest ranges, indicating a variety of high-end models. Nissan, Volkswagen, and Kia generally offer more affordable options with lower medians. Mazda shows consistent mid-to-high pricing with little variation. Ford and Chevrolet display a wide spread, suggesting diverse pricing across their vehicle lineups.
+  
 ![Price vs Make](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price_make.png?raw=true)
 
 * Price and Trim: Base, Tradesman, and Premium trims show the highest median prices with broader price ranges, reflecting more high-end features. Limited also displays wide variation, indicating diverse pricing within that trim. Laredo and Pursuit have moderate prices with tighter distributions. Latitude, 1.5T SE, SEL, and GT trims generally have lower to mid-range pricing, with Latitude being the most affordable overall.
+  
 ![Price vs Trim](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price%20vs%20trim.png?raw=true)
 
 * Price and Mileage: Most data points are clustered near very low mileage, indicating a predominance of new or nearly-new vehicles in the dataset. There's a slight downward trend, suggesting that higher mileage may be associated with lower prices, though this relationship is not strongly linear. A few high-priced vehicles with both low and high mileage act as outliers, potentially representing luxury or rare models.
+  
 ![Price vs Mileage](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price%20vs%20mileage.png?raw=true)
 
 ## Feature Importance Based on F_Statistics
@@ -81,12 +86,14 @@ Missing values in numeric columns were imputed using the mean of each of the col
 * Make and trim also significantly affect pricing but to a lesser extent.
 * Features like doors, exterior_color, and interior_color have minimal impact on price prediction.
 This helps prioritize which features are most valuable when building predictive models.
+
 ![Feature Importance](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/feature_importance_ANOVA.png?raw=true)
 
 ## Correlation Heatmap
 * Price vs Cylinders: Moderate positive correlation (0.43) – higher cylinder count is generally associated with higher prices.
 * Price vs Mileage: Very weak positive correlation (0.08) – almost negligible relationship.
 * Price vs Year: Near zero (0.00) – model year has no clear linear effect on price in this dataset.
+  
 ![Correlation Heatmap](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/correlation_heatmap.png?raw=True)
 
 # Feature Engineering
@@ -124,9 +131,11 @@ Based on the evaluation metrics after hyperparameter tuning, the **Tuned Ridge R
 
 # Error Analysis
 * Actual vs Predicted Price Plot: The plot showed a strong linear relationship between actual and predicted prices, but with increasing scatter as the price increased, indicating higher absolute errors for more expensive vehicles.
+  
 ![Actual vs Predicted](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/actual%20vs%20predicted%20price%20best_model.png?raw=True)
 
 * Distribution Plot of Actual and Predicted Price: The kernel density estimates curve for actual price (red) and predicted price (blue) helps visualize how well the predicted values align with the real data. The close overlap of the two curves indicates that the model captures the overall price distribution well, suggesting good performance in modeling price behavior. Both curves peak at around 45,000–50,000, showing that the model correctly identifies the most common price range. However, the predicted peak is slightly higher, suggesting that the model may slightly overestimate the density in this price range. In the higher price range (above 100,000), the predicted curve is slightly lower than the actual curve, implying that the model underestimates the density of high-value items.
+  
 ![Distribution of Actual vs Predicted](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/a754427e7697cfe73da876135e6ddcfe9504bc7f/images/distribution_actual_and_predicted.png?raw=true)
 
 These findings suggest that the model's performance is less consistent at the extreme ends of the price spectrum
