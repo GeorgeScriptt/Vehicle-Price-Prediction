@@ -58,7 +58,8 @@ A thorough data cleaning process was performed to ensure data quality and consis
 Missing values in numeric columns were imputed using the mean of each of the columns. This approach maintains the overall distribution while preventing data loss. Missing values in categorical columns were imputed with the mode(most frequent) of each of the column which helps preserve the dominant class in each category.
 
 # Data Exploration Insights
-* Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.![Price distribution](https://raw.githubusercontent.com/GeorgeScriptt/Vehicle-Price-Prediction/main/images/price_distribution.png)
+* Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.
+* ![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/a754427e7697cfe73da876135e6ddcfe9504bc7f/images/price_distribution.png?raw=true)
 * Mileage and Cylinders: Mileage also showed outliers and was heavily skewed towards lower values, which is expected for newer vehicles. The number of cylinders had a less skewed distribution but also showed some outliers.
 
 ## Relationship with Price
@@ -121,6 +122,7 @@ Based on the evaluation metrics after hyperparameter tuning, the **Tuned Ridge R
 * Actual vs Predicted Price Plot: The plot showed a strong linear relationship between actual and predicted prices, but with increasing scatter as the price increased, indicating higher absolute errors for more expensive vehicles.
 ![Actual vs Predicted](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/actual%20vs%20predicted%20price%20best_model.png?raw=True)
 * Distribution Plot of Actual and Predicted Price: The kernel density estimates curve for actual price (red) and predicted price (blue) helps visualize how well the predicted values align with the real data. The close overlap of the two curves indicates that the model captures the overall price distribution well, suggesting good performance in modeling price behavior. Both curves peak at around 45,000–50,000, showing that the model correctly identifies the most common price range. However, the predicted peak is slightly higher, suggesting that the model may slightly overestimate the density in this price range. In the higher price range (above 100,000), the predicted curve is slightly lower than the actual curve, implying that the model underestimates the density of high-value items.
+![Distribution of Actual vs Predicted](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/a754427e7697cfe73da876135e6ddcfe9504bc7f/images/distribution_actual_and_predicted.png?raw=true)
 
 These findings suggest that the model's performance is less consistent at the extreme ends of the price spectrum
 
