@@ -58,4 +58,4 @@ A thorough data cleaning process was performed to ensure data quality and consis
 Missing values in numeric columns were imputed using the mean of each of the columns. This approach maintains the overall distribution while preventing data loss. Missing values in categorical columns were imputed with the mode(most frequent) of each of the column which helps preserve the dominant class in each category.
 
 # Data Exploration Insights
-* Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price_distribution.png)
+* Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/price_distribution.png?raw=true)
