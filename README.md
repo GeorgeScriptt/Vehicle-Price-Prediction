@@ -78,7 +78,7 @@ Missing values in numeric columns were imputed using the mean of each of the col
 This helps prioritize which features are most valuable when building predictive models.
 ![Feature Importance](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/feature_importance_ANOVA.png?raw=true)
 
-## Corelation Heatmap
+## Correlation Heatmap
 * Price vs Cylinders: Moderate positive correlation (0.43) – higher cylinder count is generally associated with higher prices.
 * Price vs Mileage: Very weak positive correlation (0.08) – almost negligible relationship.
 * Price vs Year: Near zero (0.00) – model year has no clear linear effect on price in this dataset.
@@ -103,7 +103,7 @@ The initial performance of these models on the test set (before hyperparameter t
 
 SGDRegressor Model with parameter `max_iter=6000` (number of iterations) slightly outperforms the other models, but differences are minimal.
 
-# Hyperparameter Tuning abd Cross-Validation
+# Hyperparameter Tuning and Cross-Validation
 Hyperparameter tuning was performed for Ridge and SGDRgressor model, using 5-fold cross-validation with GridSearchCV to find the optimal model configurations and get a more robust performance estimate.
 * Ridge Tuning: The best hyperparameter found for Ridge was `alpha = 1.0`.
 * Random Forest Tuning: The best hyperparameters found for Random Forest were `'alpha' = 0.0001, 'eta0' = 0.1, 'learning_rate' = 'adaptive', 'loss' = 'squared_error', 'max_iter' = 8000, 'penalty' = 'l2'`.
@@ -118,3 +118,17 @@ The tuned Ridge model had a `1%` increase in R2 score.
 Based on the evaluation metrics after hyperparameter tuning, the **Tuned Ridge Regression** model was selected as the best-performing model. It achieved the lowest Mean Squared Error (78452834.45) and the highest R-squared score (0.84) on the test set, indicating the best balance between minimizing prediction errors and explaining the variance in vehicle prices.
 
 # Error Analysis
+* Actual vs Predicted Price Plot: The plot showed a strong linear relationship between actual and predicted prices, but with increasing scatter as the price increased, indicating higher absolute errors for more expensive vehicles.
+![Actual vs Predicted](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/main/images/actual%20vs%20predicted%20price%20best_model.png?raw=True)
+* Distribution Plot of Actual and Predicted Price: The kernel density estimates curve for actual price (red) and predicted price (blue) helps visualize how well the predicted values align with the real data. The close overlap of the two curves indicates that the model captures the overall price distribution well, suggesting good performance in modeling price behavior. Both curves peak at around 45,000–50,000, showing that the model correctly identifies the most common price range. However, the predicted peak is slightly higher, suggesting that the model may slightly overestimate the density in this price range. In the higher price range (above 100,000), the predicted curve is slightly lower than the actual curve, implying that the model underestimates the density of high-value items.
+
+These findings suggest that the model's performance is less consistent at the extreme ends of the price spectrum
+
+# Model Interpretability
+Analyzing the coefficients of the tuned Ridge model provides insights into which features have the largest impact on the predicted price
+* Features with Largest Positive Impact: Specific high-end models (e.g., 'Grand Wagoneer', 'i7') and makes ('BMW') are associated with the largest increases in predicted price. Premium interior color ('Caramel') also show significant positive coefficients, likely correlating with luxury trims and features.
+* Features with Largest Negative Impact: Certain standard or lower-priced models (e.g., 'SQ5' 'Compass', 'Mustang Mach-E') and makes ('Nissan', and 'Kia') are associated with the largest decreases in predicted price. Specific utilitarian trims ('Tradesman Regular Cab 4x4 8' Box') also have a strong negative impact.
+* The coefficients indicate the estimated change in price associated with a one-unit change in a numerical feature or the presence of a specific category (for one-hot encoded features), holding other features constant. This provides a clear understanding of the relative importance and direction of influence of different vehicle characteristics on price according to the model.
+
+# Conclusion
+The Ridge Regression model with parameter `alpha = 0.1` provides a reasonably good prediction of vehicle prices based on the available features, achieving an R-squared of 0.84. The analysis highlighted the importance of make, model, trim, and cylinders in determining price. Error analysis revealed that the model's accuracy decreases for very high-priced vehicles
