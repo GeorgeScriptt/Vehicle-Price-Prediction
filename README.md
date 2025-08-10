@@ -54,5 +54,9 @@ A thorough data cleaning process was performed to ensure data quality and consis
 ## Handling Missing Values
 * Cylinders column had approximately 10% missing values, the highest among all features.
 * All other columns with missing data had 5% and less missing values.
+  
 Missing values in numeric columns were imputed using the mean of each of the columns. This approach maintains the overall distribution while preventing data loss. Missing values in categorical columns were imputed with the mode(most frequent) of each of the column which helps preserve the dominant class in each category.
 
+# Data Exploration Insights
+* Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.
+  [Price Distribution]("C:\Users\George\Documents\Personal Projects\Gradient Descent Algorithm\price_distribution.png")
