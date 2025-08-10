@@ -59,7 +59,7 @@ Missing values in numeric columns were imputed using the mean of each of the col
 
 # Data Exploration Insights
 * Price Distribution: The price distribution was skewed towards the lower end, with a long tail indicating the presence of high-priced luxury vehicles.
-* ![Price distribution](https://github.com/GeorgeScriptt/Vehicle-Price-Prediction/blob/a754427e7697cfe73da876135e6ddcfe9504bc7f/images/price_distribution.png?raw=true)
+<img width="4869" height="1740" alt="Image" src="https://github.com/user-attachments/assets/4104c405-49e7-4095-8e1f-5f0cfc675d8f" />
 * Mileage and Cylinders: Mileage also showed outliers and was heavily skewed towards lower values, which is expected for newer vehicles. The number of cylinders had a less skewed distribution but also showed some outliers.
 
 ## Relationship with Price
